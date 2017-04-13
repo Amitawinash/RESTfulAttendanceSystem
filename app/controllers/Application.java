@@ -335,7 +335,7 @@ public class Application extends Controller {
 			mongoClient.close();
 		}
 
-		return ok(takeAttendance.render(list.toString()));
+		return ok(takeAttendance.render(list));
 	}
 
 	public Result login() {

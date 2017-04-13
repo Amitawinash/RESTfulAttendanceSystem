@@ -2,7 +2,7 @@
  * This template takes a single argument, a String containing a
  * message to display.
  *@
-@(message: String)
+@(listOfOrders: List[String])
 
 
 <!doctype html>
@@ -46,7 +46,25 @@
       </select>
           <h3>Type the Student Id to give attendance</h3>
            <input  id="inputId" type="text-center" name="presentStudantId"  placeholder="Enter Registration Number" pattern="[0-9]+" minlength="7" maxlength="7"  required/ ><br>
-<h1>@message</h1>
+<table id="list" border="1px">
+        <thead>
+          <tr>
+            <td>Order Id</td>
+            <td>Tracking link</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for(listOfOrder <- listOfOrders) {
+            <tr>
+
+              <td>@listOfOrder</td>
+              <td><input type="checkbox" name="@listOfOrder"></td>
+  
+            </tr>
+          }
+        </tbody>
+      </table>
          <input type="submit" value="Aprove" name="back" >
          
       </form>
