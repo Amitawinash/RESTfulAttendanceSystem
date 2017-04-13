@@ -1,0 +1,10 @@
+@import service.UserProvider
+@(userProvider: UserProvider)
+
+@main(userProvider, Messages("playauthenticate.token.error.title")) {
+
+<div class="row">
+    <div class="col-xs-6 col-sm-4" style="background-color: #81927A  ">
+	<h1>@Messages("playauthenticate.token.error.title")</h1>
+	<p>@Messages("playauthenticate.token.error.message")</p>
+}

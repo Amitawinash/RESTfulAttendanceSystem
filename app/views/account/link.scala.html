@@ -1,0 +1,13 @@
+@import service.UserProvider
+@(userProvider: UserProvider, playAuth: com.feth.play.module.pa.PlayAuthenticate)
+
+@main(userProvider, Messages("playauthenticate.link.account.title")) {
+    <div class="row">
+    <div class="col-xs-6 col-sm-4" style="background-color: #81927A  ">
+    <h1>@Messages("playauthenticate.link.account.title")</h1>
+    
+    <p>
+	@_providerPartial(playAuth)
+    <br/>
+    </p>
+}

@@ -1,0 +1,138 @@
+@import service.UserProvider
+@(userProvider: UserProvider, localUser: models.User = null)
+
+@main(userProvider, Messages("playauthenticate.navigation.restricted"), "restricted") {
+    <div  style="background-color: #D5DEBE; margin-right: 45%;">
+    <h1>@Messages("playauthenticate.navigation.restricted")</h1>
+    <p>
+        @Messages("playauthenticate.restricted.secrets")
+    </p>
+    </div>
+
+
+
+
+  <head>
+  <meta charset="utf-8">
+  <title>Attendance System</title>
+  <script>
+			document.write('<base href="' + document.location + '" />');
+		</script>
+  <link rel="stylesheet" href="style.css">
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <script src="http://code.angularjs.org/1.1.5/angular.js"></script>
+  <style type="text/css">
+    
+     
+
+  </style>
+</head>
+<body >
+
+    <div style="margin-top: 10px; width: 35%; overflow: hidden; margin-left: 1%; background: #D5DEBE;  float:left; margin-right:5px;">
+      <form style="margin-left: 10px" action="/studentAdded"> 
+          <h1>Add Student  </h1>
+
+
+          <input class="form-control" id="inputId" type="text-center" name="studentFirstName" placeholder="Enter Student First Name" pattern="[aA-zZ]+" maxlength="25" required/>
+          <input class="form-control"  id="inputId" type="text-center" name="studentLastName" placeholder="Enter Student Last Name"  pattern="[aA-zZ]+" maxlength="25" required / >
+          <input class="form-control"  id="inputId" type="text-center" name="studentRegistrationId"  placeholder="Enter Registration Number" pattern="[0-9]+" minlength="7"   maxlength="7" required/ >
+          <input class="form-control" id="inputId" type="date" name="dateOfJoining" required/>
+          <h6 id="h4Id" required/>Select Couse</h6>
+          <select class="form-control"   id="selectTagId" style="background-color: #EFF3E4" name="course"  required/>
+             <option value="BSc">BSc</option>
+             <option value="MSc">MSc</option>
+             <option value="BCA">BCA</option>
+             <option value="MCA">MCA</option>
+          </select>
+         
+          
+          <h6  id="h4Id" required/>Select State</h6>
+          <select class="form-control"  id="selectTagId" style="background-color: #EFF3E4" name="state" required/ >
+             <option value="Karnataka">Karnataka</option>
+             <option value="Delhi">Delhi</option>
+             <option value="Kerala">Kerala</option>
+             <option value="Goa">Goa</option>
+             <option value="Maharashtra">Maharashtra</option>
+             <option value="Nagaland">Nagaland</option>
+             <option value="Odisha">Odisha</option>
+             <option value="Punjab">Punjab</option>
+             <option value="Rajasthan">Rajasthan</option>
+             <option value="Sikkim">Sikkim</option>
+             <option value="Tamil Nadu">Tamil Nadu</option>
+             <option value="Telangana">Telangana</option>
+             <option value="Tripura">Tripura</option>
+             <option value="Uttar Pradesh">Uttar Pradesh</option>
+             <option value="Uttarakhand">Uttarakhand</option>
+             <option value="West Bengal">West Bengal</option> 
+             <option value="Andhra Pradesh">Andhra Pradesh</option>
+             <option value="Bihar">Bihar</option>
+             <option value="Gujarat">Gujarat</option>
+             <option value="Jharkhand">Jharkhand</option>
+          </select>
+          <h6  id="h4Id" required/>Select Semester</h6>
+          <select  id="selectTagId" style="background-color: #EFF3E4" name="semester" required/ >
+              <option value="1st">1st</option>
+              <option value="2nd">2nd</option>
+              <option value="3rd">3rd</option>
+              <option value="3rd">4th</option>
+              <option value="3rd">5th</option>
+              <option value="3rd">6th</option>
+          </select>
+          <input class="form-control" id="inputId" type="text-center" name="studentMobileNumber" placeholder="Enter Student Mobile Number" maxlength="10"   pattern="[0-9]+" required/>
+          <input class="form-control" id="inputId" type="email" name="emailId" placeholder="Enter Student Email Id"   required/  >
+         
+
+
+          <input class="form-control" id="submitButtonId"  type="submit" value="Submit Dtetails" name="StudentDetailButton" >
+      </form>
+    </div>
+
+
+  <div class="well" style="margin-top: 10px; width: 35%; overflow: hidden; margin-left: 2%; background: #D5DEBE;  float:left; margin-right:5px;" >
+
+    <form action="/takeAttendance">
+
+      <h2>Take Attendece:</h2>
+      <h4>Select Cource</h4>
+      
+      <select class="form-control" name="course" >
+        <option value="BSc">BSc</option>
+        <option value="MSc">MSc</option>
+        <option value="BCA">BCA</option>
+        <option value="MCA">MCA</option>
+      </select>
+
+      <h4>Select Semester</h4>
+      
+      <select  class="form-control" name="semester" >
+        <option value="1st">1st</option>
+        <option value="2nd">2nd</option>
+        <option value="3rd">3rd</option>
+        <option value="3rd">4th</option>
+        <option value="3rd">5th</option>
+        <option value="3rd">6th</option>
+      </select>
+     
+
+
+
+      <input class="form-control" id="submitButtonId" type="submit" value="Take Attendance" name="takeAttendance" >
+     
+    </form>
+    <form action="/numberOfClasses">
+
+      <h2>Check Number of Classes:</h2>
+      
+    <input class="form-control" id="inputId" type="text-center" name="studentRegistrationId"  placeholder="Enter Registration Number" pattern="[0-9]+" minlength="7" maxlength="7"  required/ >
+      
+
+
+
+      <input class="form-control" id="submitButtonId" type="submit" value="Number of Classes" name="takeAttendance" >
+     
+    </form>
+    </div>
+  </div>
+</body>
+}

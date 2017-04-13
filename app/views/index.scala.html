@@ -1,0 +1,45 @@
+@import service.UserProvider
+@(userProvider: UserProvider)
+
+@main(userProvider, Messages("playauthenticate.index.title")) {
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+
+<div  class="well" style="margin-top: 10px; width: 35%; overflow: hidden; margin-left: 2%; background: #D5DEBE;  float:left; margin-right:5px;" >
+                <form action="/numberOfClasses">
+
+      <h2>Check Number of Classes:</h2>
+      
+    <input class="form-control"  id="inputId" type="text-center" name="studentRegistrationId"  placeholder="Enter Registration Number" pattern="[0-9]+" minlength="7" maxlength="7"  required/ ><br>
+      
+
+
+
+      <input class="form-control"  id="submitButtonId" type="submit" value="Number of Classes" name="takeAttendance"  style="background-color: #EBE3C9  ; font-size: 23px;">
+     
+    </form>
+            </div>
+
+
+       
+
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+        <div class="col-xs-6 col-sm-4">
+         <br>
+         <br>
+         <br>
+       </div>
+        <div class="col-xs-6 col-sm-4">
+          <br>
+          <br>
+          <br>
+        </div>
+      </div>
+    }
