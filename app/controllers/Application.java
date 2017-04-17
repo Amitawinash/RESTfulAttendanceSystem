@@ -149,6 +149,8 @@ public class Application extends Controller {
 		String presentStudantId = request().getQueryString("presentStudantId");
 		String course = request().getQueryString("course");
 		String semester = request().getQueryString("semester");
+		
+		
 
 		System.out.println("Value from UI :" + "  attendanceDate " + attendanceDate + " semester  :: " + semester
 				+ " course  :: " + course);
